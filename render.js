@@ -1,4 +1,3 @@
-<script>
 function draw() {
   // Background
   ctx.fillStyle = '#f1faee';
@@ -19,4 +18,4 @@ function draw() {
   ctx.fillRect(player.x + 10, player.y + 10, 8, 8);
   ctx.fillRect(player.x + 32, player.y + 10, 8, 8);
 }
-</script>
+

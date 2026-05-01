@@ -1,4 +1,3 @@
-<script>
 function gameLoop() {
   update();
   draw();
@@ -7,4 +6,4 @@ function gameLoop() {
 
 // Start game
 gameLoop();
-</script>
+
