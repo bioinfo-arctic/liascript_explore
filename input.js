@@ -1,4 +1,3 @@
-<script>
 const keys = {};
 
 window.addEventListener('keydown', (e) => {
@@ -8,4 +7,4 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('keyup', (e) => {
   keys[e.key] = false;
 });
-</script>
+
