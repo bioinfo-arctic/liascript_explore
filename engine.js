@@ -1,4 +1,3 @@
-<script>
 function update() {
   // Movement
   if (keys['ArrowRight'] || keys['d']) player.x += player.speed;
@@ -15,4 +14,4 @@ function update() {
   if (player.y > canvas.height - player.height)
     player.y = canvas.height - player.height;
 }
-</script>
+
