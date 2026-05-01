@@ -29,18 +29,9 @@ const player = {
   speed: 5
 };
 
-const keys = {};
-
-window.addEventListener('keydown', (e) => {
-  keys[e.key] = true;
-});
-
-window.addEventListener('keyup', (e) => {
-  keys[e.key] = false;
-});
-
 
 </script>
+<script src="input.js"></script>
 <script src="engine.js"></script>
 <script src="render.js"></script>
 <script src="loop.js"></script>
