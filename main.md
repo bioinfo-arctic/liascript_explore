@@ -20,17 +20,9 @@ canvas.height = canvas.clientHeight;
 
 const ctx = canvas.getContext('2d');
 
-const player = {
-  x: canvas.width / 2 - 25,
-  y: canvas.height / 2 - 25,
-  width: 50,
-  height: 50,
-  color: '#e63946',
-  speed: 5
-};
-
 
 </script>
+<script src="player.js"></script>
 <script src="input.js"></script>
 <script src="engine.js"></script>
 <script src="render.js"></script>
