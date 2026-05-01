@@ -12,16 +12,6 @@ Move using **Arrow Keys** or **WASD**
 </div>
 
 <script src="canvas.js"></script>
-
-<script>
-const canvas = document.getElementById('gameCanvas');
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
-
-const ctx = canvas.getContext('2d');
-
-
-</script>
 <script src="player.js"></script>
 <script src="input.js"></script>
 <script src="engine.js"></script>
