@@ -1,12 +1,13 @@
 const keys = {};
+const prevKeys = {};
 
-window.addEventListener('keydown', (e) => {
-  if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-    e.preventDefault(); // <-- this is the missing piece
+canvas.addEventListener('keydown', (e) => {
+  if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
+    e.preventDefault(); // stop scrolling
   }
   keys[e.key] = true;
 });
 
-window.addEventListener('keyup', (e) => {
+canvas.addEventListener('keyup', (e) => {
   keys[e.key] = false;
 });
