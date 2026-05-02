@@ -1,0 +1,98 @@
+
+# Full Walking Game
+
+Move using **Arrow Keys** or **WASD**
+
+
+<div style="text-align: center;">
+  <canvas id="gameCanvas"
+          style="border:5px solid #333; background:#a8dadc; border-radius:10px; cursor:crosshair; width:100%; height:72vh; display:block;">
+  </canvas>
+</div>
+
+<script>
+
+// 1. canvas
+
+const canvas = document.getElementById('gameCanvas');
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+
+const ctx = canvas.getContext('2d');
+
+// 2. player
+const player = {
+  x: canvas.width / 2 - 25,
+  y: canvas.height / 2 - 25,
+  width: 50,
+  height: 50,
+  color: '#e63946',
+  speed: 5
+};
+
+// 3. input
+const keys = {};
+
+window.addEventListener('keydown', (e) => {
+  if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+    e.preventDefault(); // <-- this is the missing piece
+  }
+  keys[e.key] = true;
+});
+
+window.addEventListener('keyup', (e) => {
+  keys[e.key] = false;
+});
+// 4. engine
+function update() {
+  // Movement
+  if (keys['ArrowRight']) player.x += player.speed;
+  if (keys['ArrowLeft'] ) player.x -= player.speed;
+  if (keys['ArrowUp']   ) player.y -= player.speed;
+  if (keys['ArrowDown'] ) player.y += player.speed;
+
+  // Boundaries
+  if (player.x < 0) player.x = 0;
+  if (player.x > canvas.width - player.width)
+    player.x = canvas.width - player.width;
+
+  if (player.y < 0) player.y = 0;
+  if (player.y > canvas.height - player.height)
+    player.y = canvas.height - player.height;
+}
+
+// 5. render
+function draw() {
+  // Background
+  ctx.fillStyle = '#f1faee';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Shadow
+  ctx.fillStyle = 'rgba(0,0,0,0.1)';
+  ctx.beginPath();
+  ctx.ellipse(player.x + 25, player.y + 55, 20, 10, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Player
+  ctx.fillStyle = player.color;
+  ctx.fillRect(player.x, player.y, player.width, player.height);
+
+  // Eyes
+  ctx.fillStyle = 'white';
+  ctx.fillRect(player.x + 10, player.y + 10, 8, 8);
+  ctx.fillRect(player.x + 32, player.y + 10, 8, 8);
+}
+
+// 6. loop
+function gameLoop() {
+  update();
+  draw();
+  requestAnimationFrame(gameLoop);
+}
+
+// Start game
+gameLoop();
+
+
+
+</script>
