@@ -1,9 +1,9 @@
 function update() {
   // Movement
-  if (keys['ArrowRight'] || keys['d']) player.x += player.speed;
-  if (keys['ArrowLeft']  || keys['a']) player.x -= player.speed;
-  if (keys['ArrowUp']    || keys['w']) player.y -= player.speed;
-  if (keys['ArrowDown']  || keys['s']) player.y += player.speed;
+  if (keys['ArrowRight']) player.x += player.speed;
+  if (keys['ArrowLeft'] ) player.x -= player.speed;
+  if (keys['ArrowUp']   ) player.y -= player.speed;
+  if (keys['ArrowDown'] ) player.y += player.speed;
 
   // Boundaries
   if (player.x < 0) player.x = 0;
