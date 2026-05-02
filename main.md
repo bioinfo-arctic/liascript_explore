@@ -2,7 +2,7 @@
 
 # Full Walking Game
 
-Move using **Arrow Keys** or **WASD**
+Move using **Arrow Keys**
 
 
 <div style="text-align: center;">
