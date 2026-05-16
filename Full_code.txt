@@ -45,8 +45,8 @@ const worldObjects = [
 
 // 3. player
 const player = {
-  x: world.width / 2,
-  y: world.height / 2,
+  x: canvas.width / 2 - 25,
+  y: canvas.height / 2 - 25,
   width: 50,
   height: 50,
   color: '#e63946',
@@ -78,14 +78,14 @@ window.addEventListener('keyup', (e) => {
 });
 
 
-// 6. update
+// 6. engine
 function update() {
 
   // Movement
-  if (keys['ArrowRight'] || keys['d']) player.x += player.speed;
-  if (keys['ArrowLeft']  || keys['a']) player.x -= player.speed;
-  if (keys['ArrowUp']    || keys['w']) player.y -= player.speed;
-  if (keys['ArrowDown']  || keys['s']) player.y += player.speed;
+  if (keys['ArrowRight']) player.x += player.speed;
+  if (keys['ArrowLeft'] ) player.x -= player.speed;
+  if (keys['ArrowUp']   ) player.y -= player.speed;
+  if (keys['ArrowDown'] ) player.y += player.speed;
 
   // World boundaries
   if (player.x < 0) player.x = 0;
