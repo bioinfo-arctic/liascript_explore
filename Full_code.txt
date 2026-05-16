@@ -1,6 +1,6 @@
 # Full Walking Game (World + Camera + Minimap + Styled World)
 
-Move using **Arrow Keys** or **WASD**
+Move using **Arrow Keys** 
 
 <div style="text-align: center;">
   <canvas id="gameCanvas"
